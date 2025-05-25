@@ -87,13 +87,29 @@ The algorithm converged after 471 iterations, producing the following final valu
 
 ## Visualization
 
-![State Numbers and Value Function Heatmap](visualizations.png)
+The implementation includes two side-by-side visualizations:
 
-The visualization above shows:
+1. **State Number Grid**:
+```
+[ 0  1  2  3]
+[ 4  5  6  7]
+[ 8  9 10 11]
+[12 13 14 15]
+```
+This grid shows how states are numbered in the environment, with state 0 (start) at top-left and state 15 (goal) at bottom-right.
 
-1. **Left**: State number grid (0-15) showing the start state (0) in top-left and goal state (15) in bottom-right
-2. **Right**: Value function heatmap where:
-   - Blue colors indicate lower values (more negative, further from goal)
-   - Red colors indicate higher values (closer to 0, closer to goal)
-   - Each cell shows its exact value
-   - The gradient from blue to red reveals the optimal path from start to goal
+2. **Value Function Heatmap**:
+- Uses a coolwarm color scheme to visualize the value function
+- Blue colors indicate lower values (more negative, further from goal)
+- Red colors indicate higher values (closer to 0, closer to goal)
+- Shows the exact values in each state
+- The color gradient naturally reveals the optimal path from start to goal
+- The bottom-right cell (state 15) shows value 0, representing the goal state
+- The top-left cell (state 0) shows the lowest value (-59.42), representing the start state
+
+The heatmap visualization makes it easy to:
+- Identify the optimal path by following the color gradient from blue to red
+- Understand the relative distances to the goal from each state
+- Verify the convergence of the value iteration algorithm
+
+![alt text](image.png)
